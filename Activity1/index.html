@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="vieport" contect="width=device-width, initial-scale=1.0">
+  <title>Product Listings</title>
+</head>
+<body>
+    <div class="product-item"> 
+        <h2 id="product-title-1">Awesome Gadget</h2> 
+        <p class="product-description">A revolutionary device for everyday use.</p> 
+        <span class="price">Price: P49.99</span> 
+        <button class="add-to-cart-btn" id="add-btn-1">Add to Cart</button> 
+    </div> 
+     
+    <div class="product-item featured"> 
+        <h2 id="product-title-2">Deluxe Widget</h2> 
+        <p class="product-description">Experience the ultimate in widget technology.</p> 
+        <span class="price discounted">Price: P99.99</span> 
+        <button class="add-to-cart-btn" id="add-btn-2">Add to Cart</button> 
+    </div> 
+     
+    <div class="product-item"> 
+        <h2 id="product-title-3">Basic Thingamajig</h2> 
+        <p class="product-description">A simple solution to a complex problem.</p> 
+        <span class="price">Price: P19.99</span> 
+        <button class="add-to-cart-btn" id="add-btn-3">Add to Cart</button> 
+    </div> 
+
+    <button onclick="changeText()">Click Me</button>
+
+    <script>
+            function changeText() {
+            document.getElementsById("product-title-2").innerText = "Featured: Deluxe Widget = Limited"
+
+            let description = document.getElementsByClassName("product-description");
+            for (let i = 0; i < description.length; i++) {
+
+            description[i].textContent += "Special Offer!";
+    }
+  }
+    </script>
+</body>
+</html>
+
+<!-- DOM Document object Model
+
+    programming interface for web documents
+    allowing JS to manipulate the HTML and CSS
+-->
+
+
+<!--function changeText() {
+    let items = document.getElementByClassName("info");
+    for (let i = 0; i < items.length; i++) {
+
+        items[i].innerText = "Updated";
+    }
+  }
