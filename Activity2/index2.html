@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Example</title>
+    <style>
+        .important {
+        font-weight: bold;
+        color: green;
+        }
+        .comment {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        padding: 10px;
+        }
+        #main-title {
+        font-size: 2em;
+        }
+        </style>
+</head>
+<body>
+
+    <h1 id="main-title">The Wonders of JavaScript</h1>
+    <p class="post-paragraph">JavaScript is an amazing language that allows for dynamic web
+    development.</p>
+    <p class="post-paragraph important">One of its key features is the ability to manipulate the
+    DOM.</p>
+
+    <div id="comments-section">
+    <h2>Comments</h2>
+        <div class="comment" data-comment-id="1">
+            <p class="comment-author">Alice</p>
+            <p class="comment-text">Great post!</p>
+        </div>
+
+        <div class="comment">
+            <p class="comment-author">Bob</p>
+            <p class="comment-text important">I learned a lot.</p>
+        </div>
+
+    <ul id="tags">
+        <li class="tag">javascript</li>
+        <li class="tag important">dom</li>
+        <li class="tag">web development</li>
+    </ul>
+    </div>
+
+        <button id="highlight-important">Highlight Important Text</button>
+    <hr>
+    <button onclick="NUMBER1()">No.1</button>
+    <button onclick="NUMBER2()">No.2</button>
+    <button onclick="NUMBER3()">No.3</button>
+    <button onclick="NUMBER4()">No.4</button>
+    <button onclick="NUMBER5()">No.5</button>
+
+    <script>
+        
+    function NUMBER1() {
+        document.getElementById("main-title").innerText = "Exploring the Power of DOM Manipulation";
+    }
+
+    
+    function NUMBER2() {
+        const paragraphs = document.getElementsByClassName("post-paragraph");
+        console.log("Total number of paragraphs: " + paragraphs.length);
+    }
+
+    
+    function NUMBER3() {
+        const commentAuthors = document.querySelectorAll("#comments-section p.comment-author");
+        commentAuthors.forEach(author => console.log(author.textContent));
+    }
+
+    
+    function NUMBER4() {
+        const firstImportantTag = document.querySelector("#tags li.important");
+        if (firstImportantTag) {
+            firstImportantTag.textContent += " (Featured)";
+        }
+    }
+
+    
+    function NUMBER5() {
+    const importantElements = document.querySelectorAll(".important");
+    importantElements.forEach(element => element.style.color = "blue");
+    }
+    </script>
+
+</body>
+</html>
+
+<!-- DOM Document Object Mode
+Programming interface for web documents
+allowing JS to manipulate the HTML and CSS
+
+-->
